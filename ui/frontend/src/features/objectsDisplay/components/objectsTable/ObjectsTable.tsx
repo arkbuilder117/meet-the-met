@@ -72,10 +72,14 @@ export default function ObjectsTable({ setSelectedObject }: Props) {
     );
 
     return (
-        <Stack spacing={2} sx={{ maxWidth: '1000px', width: '100vw'}}>
+        <Stack spacing={2} sx={{ maxWidth: '1000px', width: '100vw' }}>
             <Grid
                 container
-                sx={{ justifyContent: 'end', alignItems: 'center', paddingRight: '10px' }}
+                sx={{
+                    justifyContent: 'end',
+                    alignItems: 'center',
+                    paddingRight: '10px',
+                }}
             >
                 <SearchObject setSelectedObject={setSelectedObject} />
                 <Button

@@ -23,9 +23,12 @@ export default function FilterDrawer({
     searchTerm,
     onFilter,
 }: Props) {
-    const [selectedDepartmentId, setSelectedDepartmentId] =
-        useState(departmentId);
-    const [currentSearchTerm, setCurentSearchTerm] = useState(searchTerm);
+    const [selectedDepartmentId, setSelectedDepartmentId] = useState<
+        number | undefined
+    >(departmentId);
+    const [currentSearchTerm, setCurentSearchTerm] = useState<
+        string | undefined
+    >(searchTerm);
 
     const { data = [], isLoading } = useQuery({
         queryKey: ['departments'],
@@ -68,7 +71,7 @@ export default function FilterDrawer({
                 ))}
             </Select>
             <TextField
-                value={currentSearchTerm}
+                value={currentSearchTerm ?? ''}
                 label="Filter by Title"
                 onChange={(event) => setCurentSearchTerm(event.target.value)}
             />
